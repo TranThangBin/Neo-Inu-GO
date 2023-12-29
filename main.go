@@ -34,7 +34,10 @@ func init() {
 }
 
 func init() {
-	s.Identify.Intents = discordgo.IntentGuildMessages
+	s.Identify.Intents = discordgo.IntentsAllWithoutPrivileged |
+		discordgo.IntentsGuildPresences |
+		discordgo.IntentsGuildMembers |
+		discordgo.IntentsGuildMessages
 }
 
 func init() {
