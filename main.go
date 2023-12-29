@@ -52,7 +52,7 @@ func main() {
 	for i, command := range command.Commands {
 		cmd, err := s.ApplicationCommandCreate(s.State.User.ID, *guildId, command)
 		if err != nil {
-			log.Panicf("Unable to create command %s: %v", cmd.Name, err)
+			log.Panicf("Unable to create command %s: %v", command.Name, err)
 		}
 		log.Printf("Successfully load command %s", cmd.Name)
 		registeredCommands[i] = cmd
